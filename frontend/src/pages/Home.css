@@ -1,0 +1,13 @@
+
+.page-container {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+

@@ -1,0 +1,44 @@
+.ticket-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #272727;
+  border: 1px solid #d7263d;
+  padding: 12px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+}
+.ticket-info {
+  display: flex;
+  flex-direction: column;
+}
+.ticket-name {
+  font-weight: 700;
+}
+.client-name {
+  color: #ccc;
+  font-size: 13px;
+}
+.ticket-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.ticket-points {
+  font-weight: 700;
+}
+.ticket-priority {
+  background: #3a3a3a;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+.ticket-icon img {
+  width: 26px;
+  height: 26px;
+}
+.page-title
+{
+  color:white;
+}

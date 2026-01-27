@@ -1,0 +1,52 @@
+import { useState, useMemo} from "react";
+import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import Home from "./pages/Home";
+import TicketInfo from "./pages/TicketInfo";
+import Completed from "./pages/completed";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+export default function App() {
+  const [points, setPoints] = useState(0);
+  const [tickets, setTickets] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/show")
+      .then(res => res.json())
+      .then(tickets => setTickets(tickets));
+      //console.log(tickets);
+  }, [tickets]);
+  useEffect(() => {
+    fetch("http://localhost:5000/show-points")
+      .then(res => res.json())
+      .then(data => setPoints(data));
+  }, [tickets]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [priorityFilter, setPriorityFilter] = useState("");
+  const handleSearch = (text) => setSearchTerm(text);
+  const handlePriority = (p) => setPriorityFilter(p);
+  const filteredNotComplete = useMemo(() => {
+    return tickets
+      .filter(t => (searchTerm ? t.client.toLowerCase().includes(searchTerm.toLowerCase()) : true))
+      .filter(t => (priorityFilter ? t.priority === priorityFilter : true));
+  }, [tickets, searchTerm, priorityFilter]);
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Login/>} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/Home" element={<Home tickets={filteredNotComplete}        
+        points={points}
+        onSearch={handleSearch}
+        onPriority={handlePriority}/>}/>
+        <Route
+          path="/ticket/:id"
+          element={<TicketInfo tickets={tickets} points={points}/>}
+        />
+        <Route path="/completed" element={<Completed points={points} />}
+        />
+      </Routes>
+    </>
+  );
+}
+
+

@@ -1,0 +1,40 @@
+body
+{
+  background-color: #323232;
+  padding: 20px;
+
+}
+.ticketinfo-container {
+  color: #fff;
+}
+.problem-box {
+  background: #202020;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #d7263d;
+  color: #fff;
+}
+textarea {
+  width: 100%;
+  background: #272727;
+  color: #fff;
+  border: 1px solid #d7263d;
+  padding: 8px;
+  border-radius: 6px;
+}
+.submit-btn {
+  background: #d7263d;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.solution-text {
+  background: #202020;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #d7263d;
+  color: #fff;
+  margin-top: 10px;
+}
