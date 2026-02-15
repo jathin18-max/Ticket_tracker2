@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./Navbar.css";
 import user from "../assets/user.png";
 
+
 export default function Navbar({ points, onSearch, onPriority }) {
   const [search, setSearch] = useState("");
   const [priority, setPriority] = useState("");
@@ -47,7 +48,6 @@ export default function Navbar({ points, onSearch, onPriority }) {
           <img src={user} className="profile_img" onClick={() => setShowProfile(true)} />
         </div>
       </div>
-
       {showProfile && (
         <div className="profile_popup" onClick={() => setShowProfile(false)}>
           <div className="profile_box" onClick={(e) => e.stopPropagation()}>
@@ -58,7 +58,10 @@ export default function Navbar({ points, onSearch, onPriority }) {
               <p>Name: <b>Jithin</b></p>
               <p>Role: <b>Developer</b></p>
             </div>
+            <div className="two-items">
+            <button className="close_btn2"><Link to="/">Logout</Link></button>
             <button className="close_btn" onClick={() => setShowProfile(false)}>Close</button>
+            </div>
           </div>
         </div>
       )}

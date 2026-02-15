@@ -173,7 +173,7 @@
 /* ===========================
        CLOSE BUTTON
    =========================== */
-.close_btn {
+.close_btn ,.close_btn2{
   background: #d7263d;
   border: none;
   padding: 6px 12px;
@@ -183,7 +183,15 @@
   cursor: pointer;
   transition: 0.2s;
 }
-
+.two-items {
+  display: flex;
+  gap: 130px;
+}
+.close_btn2 a
+{
+text-decoration: none;
+color: white;
+}
 .close_btn:hover {
   background: #b71d34;
 }
