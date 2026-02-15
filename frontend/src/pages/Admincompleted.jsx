@@ -42,4 +42,4 @@ export default function AdminCompleted() {
       </div>
     </div>
   );
-}
+}  
